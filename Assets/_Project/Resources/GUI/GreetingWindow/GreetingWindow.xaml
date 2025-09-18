@@ -1,0 +1,340 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis">
+  <UserControl.Resources>
+    <!-- Палитра цветов для букв -->
+    <SolidColorBrush x:Key="c0" Color="#FFe74c3c"/>
+    <SolidColorBrush x:Key="c1" Color="#FFe67e22"/>
+    <SolidColorBrush x:Key="c2" Color="#FFf1c40f"/>
+    <SolidColorBrush x:Key="c3" Color="#FF2ecc71"/>
+    <SolidColorBrush x:Key="c4" Color="#FF1abc9c"/>
+    <SolidColorBrush x:Key="c5" Color="#FF3498db"/>
+    <SolidColorBrush x:Key="c6" Color="#FF9b59b6"/>
+    <SolidColorBrush x:Key="c7" Color="#FF8e44ad"/>
+    <SolidColorBrush x:Key="c8" Color="#FFe84393"/>
+    <SolidColorBrush x:Key="c9" Color="#FFfdcb6e"/>
+    <SolidColorBrush x:Key="c10" Color="#FF00cec9"/>
+    <SolidColorBrush x:Key="c11" Color="#FF00b894"/>
+    <SolidColorBrush x:Key="c12" Color="#FF6c5ce7"/>
+  </UserControl.Resources>
+
+  <Grid Margin="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- Центрированная область с кнопкой и летающими буквами -->
+    <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <!-- Область, в которой буквы будут вращаться вокруг центра -->
+      <Grid Width="420" Height="420">
+        <!-- Центральная кнопка -->
+        <StackPanel x:Name="centerStack" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+          <TextBlock x:Name="autosaveText"
+                     Text="Игра на PC автоматически сохраняется (!!!но не в вебе!!!) — можно перезапустить её в любой момент.
+
+Обратите внимание - есть управление с клавиатуры - хоткеи в скобках у действий (Z X C)"
+                     FontSize="14"
+                     Foreground="White"
+                     Opacity="0.95"
+                     TextAlignment="Center"
+                     TextWrapping="Wrap"
+                     Width="320"
+                     Margin="0,0,0,8" />
+
+          <Button x:Name="startButton" Content="Start" Width="140" Height="48" Command="{Binding StartCommand}" />
+
+          <TextBlock x:Name="licenseHintText"
+                     Text="Если написано, что лицензия кончилась — перезапустите игру (каждые 10 минут). Поэтому рекомендуется всё-же PC билд, в котором сохранения"
+                     FontSize="12"
+                     Foreground="White"
+                     Opacity="0.9"
+                     TextAlignment="Center"
+                     TextWrapping="Wrap"
+                     Width="320"
+                     Margin="0,8,0,0" />
+        </StackPanel>
+
+        <!-- Буквы располагаются в одном месте и сдвинуты по Y, затем вращаются вокруг центра -->
+        <!-- Всего 13 букв: J a m o f C r e a t i o n -->
+
+        <TextBlock Text="J" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c0}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="0" x:Name="r0"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r0" Storyboard.TargetProperty="Angle" From="0" To="360" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="a" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c1}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="14" x:Name="r1"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r1" Storyboard.TargetProperty="Angle" From="14" To="374" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="m" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c2}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="28" x:Name="r2"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r2" Storyboard.TargetProperty="Angle" From="28" To="388" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="O" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c3}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="42" x:Name="r3"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r3" Storyboard.TargetProperty="Angle" From="42" To="402" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="f" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c4}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="56" x:Name="r4"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r4" Storyboard.TargetProperty="Angle" From="56" To="416" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="C" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c5}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="70" x:Name="r5"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r5" Storyboard.TargetProperty="Angle" From="70" To="430" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="r" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c6}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="84" x:Name="r6"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r6" Storyboard.TargetProperty="Angle" From="84" To="444" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="e" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c7}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="98" x:Name="r7"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r7" Storyboard.TargetProperty="Angle" From="98" To="458" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="a" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c8}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="112" x:Name="r8"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r8" Storyboard.TargetProperty="Angle" From="112" To="472" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="t" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c9}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="126" x:Name="r9"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r9" Storyboard.TargetProperty="Angle" From="126" To="486" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="i" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c10}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="140" x:Name="r10"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r10" Storyboard.TargetProperty="Angle" From="140" To="500" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="o" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c11}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="154" x:Name="r11"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r11" Storyboard.TargetProperty="Angle" From="154" To="514" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+        <TextBlock Text="n" FontSize="28" FontWeight="Bold" Foreground="{StaticResource c12}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+          <TextBlock.RenderTransform>
+            <TransformGroup>
+              <TranslateTransform Y="-120"/>
+              <RotateTransform Angle="168" x:Name="r12"/>
+            </TransformGroup>
+          </TextBlock.RenderTransform>
+          <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+              <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever">
+                  <DoubleAnimation Storyboard.TargetName="r12" Storyboard.TargetProperty="Angle" From="168" To="528" Duration="0:0:12"/>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </TextBlock.Triggers>
+        </TextBlock>
+
+      </Grid>
+    </Grid>
+
+    <!-- Нижняя строка (если нужна) оставлена пустой или для других элементов -->
+    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,12,0,0">
+      <!-- Надпись внизу: "by NB☢️" — имитация 3D через Skew + Scale (Noesis не поддерживает PlaneProjection) -->
+      <TextBlock x:Name="creditText"
+                 Text="by NB☢️"
+                 FontSize="18"
+                 FontWeight="Bold"
+                 Foreground="White"
+                 Opacity="0.95"
+                 HorizontalAlignment="Center"
+                 Margin="0,8,0,8"
+                 RenderTransformOrigin="0.5,0.5">
+        <TextBlock.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform x:Name="creditScale" ScaleX="1" ScaleY="1" />
+            <SkewTransform x:Name="creditSkew" AngleX="0" AngleY="0" />
+            <RotateTransform x:Name="creditRotate" Angle="-8" />
+          </TransformGroup>
+        </TextBlock.RenderTransform>
+        <TextBlock.Triggers>
+          <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+              <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                <!-- Скос по Y имитирует поворот плоскости вокруг вертикальной оси -->
+                <DoubleAnimation Storyboard.TargetName="creditSkew"
+                                 Storyboard.TargetProperty="AngleY"
+                                 From="-8" To="8" Duration="0:0:3" />
+                <!-- Небольшая анимация масштаба создаёт ощущение перспективы -->
+                <DoubleAnimation Storyboard.TargetName="creditScale"
+                                 Storyboard.TargetProperty="ScaleX"
+                                 From="0.98" To="1.02" Duration="0:0:3" />
+                <DoubleAnimation Storyboard.TargetName="creditScale"
+                                 Storyboard.TargetProperty="ScaleY"
+                                 From="0.99" To="1.01" Duration="0:0:3" />
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger>
+        </TextBlock.Triggers>
+      </TextBlock>
+    </StackPanel>
+  </Grid>
+</UserControl>

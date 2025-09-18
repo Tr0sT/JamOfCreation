@@ -1,0 +1,27 @@
+Library/*
+Temp/*
+Build/*
+.utmp/*
+Builds/*
+*.apk
+.vs/*
+*.sln
+*.csproj
+obj/*
+.idea/*
+*JetBrains*
+*DotSettings.user
+.gradle/*
+*.aab
+Logs/*
+Assets/Plugins/Sirenix/Assemblies/AOT
+Assets/BuildReports*
+Recordings/*
+UserSettings/*
+*.unitypackage
+**/Settings.bytes
+
+# Articy Plugin
+# =====================================
+Assets/ArticyImporter/Content/Generated/
+Articy/Sessions

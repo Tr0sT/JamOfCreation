@@ -1,0 +1,32 @@
+{
+    "name": "NuclearServices",
+    "rootNamespace": "",
+    "references": [
+        "GUID:69cc932efaf5da6419fd58013ca88b3c",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:593a5b492d29ac6448b1ebf7f035ef33",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:08b38f39e2d9e594389b7a4cf4c2c338",
+        "GUID:4f682e06dbb3e624faedad9cc27106cc",
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:b1d24e9b8b7ddb34f8d72000ede4b999",
+        "GUID:80ecb87cae9c44d19824e70ea7229748",
+        "GUID:367d8b9687ac36e4a90319986ab8dfb1",
+        "GUID:247a163e3cc6efb42bd22b9023b87ff3",
+        "GUID:cc9b1dbcea8af584ba492afeb67a12da",
+        "GUID:4c25c05f410a3a447a75c3b0909152ef",
+        "GUID:77221876cc6b8244180b96e320b1bcd4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

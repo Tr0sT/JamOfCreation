@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mcp-unity": {
+      "command": "node",
+      "args": [
+        "C:/Projects/NuclearBand/JamOfCreation/Library/PackageCache/com.gamelovers.mcp-unity@7a061ae194bd/Server~/build/index.js"
+      ]
+    }
+  }
+}

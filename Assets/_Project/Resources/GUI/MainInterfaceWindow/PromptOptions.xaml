@@ -1,0 +1,47 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis"
+             xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NuclearBand.Game">
+  <UserControl.Resources>
+    <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    <local:EmojiRichTextConverter x:Key="EmojiRichTextConverter"/>
+  </UserControl.Resources>
+  <noesis:Xaml.Dependencies>
+    <noesis:Dependency Source="Energy.png"/>
+    <noesis:Dependency Source="Ideas.png"/>
+    <noesis:Dependency Source="Code.png"/>
+    <noesis:Dependency Source="Art.png"/>
+  </noesis:Xaml.Dependencies>
+  <Grid>
+    <Border Background="#2B2B2B" CornerRadius="8" Padding="10" Margin="0,8,0,8">
+      <UniformGrid Columns="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton GroupName="ThreeOptionGroup" Margin="8" VerticalAlignment="Center"
+                     IsChecked="{Binding SelectedOption.Value, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default}">
+          <StackPanel Width="320" HorizontalAlignment="Center">
+            <TextBlock Text="Default(A)" FontWeight="Bold" Foreground="White" FontSize="50" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBlock Text="Самая быстрая модель" FontSize="36" Foreground="#DDDDDD" TextWrapping="Wrap" TextAlignment="Center" />
+          </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="ThreeOptionGroup" Margin="8" VerticalAlignment="Center"
+                     IsChecked="{Binding SelectedOption.Value, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Reasoning}">
+          <StackPanel Width="320" HorizontalAlignment="Center">
+            <TextBlock Text="Reasoning(S)" FontWeight="Bold" Foreground="White" FontSize="50" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBlock Text="Утроенный кулдаун с удвоенным результатом" FontSize="36" Foreground="#DDDDDD" TextWrapping="Wrap" TextAlignment="Center" />
+          </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="ThreeOptionGroup" Margin="8" VerticalAlignment="Center"
+                     IsChecked="{Binding SelectedOption.Value, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=WebSearch}">
+          <StackPanel Width="320" HorizontalAlignment="Center">
+            <TextBlock Text="Web (D)" FontWeight="Bold" Foreground="White" FontSize="50" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBlock Text="Выходит за грани лимита за удвоенную цену" FontSize="36" Foreground="#DDDDDD" TextWrapping="Wrap" TextAlignment="Center" />
+          </StackPanel>
+        </RadioButton>
+      </UniformGrid>
+    </Border>
+  </Grid>
+</UserControl>

@@ -1,0 +1,119 @@
+{
+  "Prompts": [
+    {
+      "Title": "ChatGPT (Z)",
+      "Description": "",
+      "ActionPanelType": "Prompts",
+      "ActionType": "ChatGPT",
+      "Cooldown": 5,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "CurrencyBonus":
+      {
+        "CurrencyType": "Ideas",
+        "CurrentBonus": 1
+      }
+    },
+
+    {
+      "Title": "NanoBanana (X)",
+      "Description": "",
+      "ActionPanelType": "Prompts",
+      "ActionType": "NanoBanana",
+      "Cooldown": 5,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "CurrencyBonus":
+      {
+        "CurrencyType": "Art",
+        "CurrentBonus": 1
+      }
+    },
+    
+
+
+    {
+      "Title": "Claude (C)",
+      "Description": "",
+      "ActionPanelType": "Prompts",
+      "ActionType": "Claude",
+      "Cooldown": 5,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "CurrencyBonus":
+      {
+        "CurrencyType": "Code",
+        "CurrentBonus": 1
+      }
+    },
+
+    {
+      "Title": "BrainStorm (Q)",
+      "Description": "х2 cap",
+      "ActionPanelType": "Actions",
+      "ActionType": "BrainStorm",
+      "Cooldown": 60,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      }
+
+    },
+
+    {
+      "Title": "Оптимизация (W)",
+      "Description": "-4сек кд",
+      "ActionPanelType": "Actions",
+      "ActionType": "Optimization",
+      "Cooldown": 60,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      }
+
+    },
+
+    {
+      "Title": "Кофе (E)",
+      "Description": "х2.5 реген",
+      "ActionPanelType": "Actions",
+      "ActionType": "Coffee",
+      "Cooldown": 60,
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      }
+      
+    }
+  ]
+}

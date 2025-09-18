@@ -1,0 +1,137 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis"
+             xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NuclearBand.Game">
+  <noesis:Xaml.Dependencies>
+    <noesis:Dependency Source="Energy.png"/>
+    <noesis:Dependency Source="Ideas.png"/>
+    <noesis:Dependency Source="Code.png"/>
+    <noesis:Dependency Source="Art.png"/>
+  </noesis:Xaml.Dependencies>
+  <UserControl.Resources>
+    <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    <local:EmojiRichTextConverter x:Key="EmojiRichTextConverter"/>
+    <!-- Панель для горизонтального расположения с переносом -->
+    <ItemsPanelTemplate x:Key="HorizontalWrapPanel">
+      <UniformGrid Columns="3"/>
+    </ItemsPanelTemplate>
+
+    <!-- Конвер��ер для булевой видимости -->
+    <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
+    <!-- Стиль прямоугольной (со скруглением) кнопки для действия (бело-синяя гамма) -->
+    <Style x:Key="ActionButtonStyle" TargetType="Button">
+      <Setter Property="Foreground" Value="#FFFFFFFF"/>
+      <Setter Property="Background" Value="#11203366"/>
+      <Setter Property="BorderBrush" Value="#553AA0FF"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <!-- Уменьшенный внутренний отступ для максимально компактного расположения -->
+      <Setter Property="Padding" Value="2,1"/>
+      <Setter Property="Margin" Value="0,0,8,2"/>
+      <Setter Property="MinHeight" Value="0"/>
+      <!-- Жёсткая высота кнопки, чтобы убрать свободное место под кулдауном -->
+      <Setter Property="Height" Value="150"/>
+      <Setter Property="MaxHeight" Value="150"/>
+       <!-- Кнопки растягиваются в UniformGrid; убраны фиксированные Width/Height -->
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="VerticalContentAlignment" Value="Top"/>
+      <Setter Property="FontSize" Value="40"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="8"
+                    Padding="2">
+              <!-- Показываем содержимое кнопки (Grid с Viewbox внутри) через ContentPresenter -->
+              <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#153B5A"/>
+                <Setter TargetName="border" Property="BorderBrush" Value="#6FB8FF"/>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#0F2A44"/>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Шаблон одного действия: кнопка с заголовком и оверлеем кулдауна -->
+    <DataTemplate x:Key="ActionTemplate">
+      <Button Command="{Binding OnClick}" Style="{StaticResource ActionButtonStyle}" HorizontalAlignment="Stretch">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Вторая строка сделана Auto чтобы не занимать лишнего места -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+
+          <!-- Title -->
+          <!-- Ещё уменьшенная высота заголовка -->
+          <Viewbox Grid.Row="0" Stretch="Uniform" StretchDirection="DownOnly" Height="50">
+            <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" TextAlignment="Center" FontSize="60"/>
+          </Viewbox>
+
+          <!-- Одна строка: Description слева, Cost справа -->
+           <Grid Grid.Row="1">
+             <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="Auto"/>
+             </Grid.ColumnDefinitions>
+
+            <!-- Меньшие шрифты/отступы для компактности -->
+            <TextBlock Grid.Column="0" 
+                       noesis:RichText.Text="{Binding Description.Value, Converter={StaticResource EmojiRichTextConverter}, ConverterParameter=45}"
+                       TextTrimming="CharacterEllipsis" FontSize="50" Foreground="#DDDDDD" Margin="4,1,4,1" VerticalAlignment="Center" />
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Right" FontSize="40" Foreground="#A0D9FF" Margin="4,1,4,1" 
+                       VerticalAlignment="Center"
+                       noesis:RichText.Text="{Binding Cost.Value, Converter={StaticResource EmojiRichTextConverter}, ConverterParameter=45}" />
+
+            <!-- Кулдаун почти на цене: слегка уменьшен и ближе к цене -->
+            <TextBlock Grid.Column="1"
+                       Text="{Binding RemainingCooldown.Value, Mode=OneWay}"
+                       Visibility="{Binding ShowCooldown.Value, Converter={StaticResource BoolToVis}, Mode=OneWay}"
+                       Foreground="#FFFFFFFF" FontSize="40" FontWeight="SemiBold"
+                       Background="#AA10283E" Padding="4,1"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-18,4,0"/>
+           </Grid>
+            <!-- Базовый кулдаун в той же строке, уменьшен и с небольшим внешним отступом -->
+          <!-- Базовый кулдаун снижен по размеру и поднят вверх, чтобы заходить почти поверх цены -->
+          <TextBlock Grid.Row="2" Text="{Binding Cooldown.Value, Mode=OneWay}"
+                     HorizontalAlignment="Center" FontSize="40" Foreground="#A0D9FF" Margin="0,-18,0,0" />
+        </Grid>
+      </Button>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Border Background="#11203366" CornerRadius="10" Padding="0" Margin="0,0,0,0" BorderBrush="#553AA0FF" BorderThickness="1">
+    <StackPanel>
+      <TextBlock Text="{Binding Title}" FontSize="60" Foreground="#FFFFFFFF" Margin="0,0,0,0" FontWeight="SemiBold"/>
+      <ScrollViewer VerticalScrollBarVisibility="Auto" Height="160">
+        <ItemsControl ItemsSource="{Binding ActionViewModels}"
+                      ItemTemplate="{StaticResource ActionTemplate}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <UniformGrid Columns="3" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+        </ItemsControl>
+      </ScrollViewer>
+    </StackPanel>
+  </Border>
+</UserControl>

@@ -1,0 +1,1283 @@
+{
+  "Upgrades": [
+    {
+      "Id": {
+        "Value": "RegisterGameJam"
+      },
+      "Sound": "o-pozabavimsja",
+      "Title": "Регистрация в геймджеме",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 50.0
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "WebinarHintingIdeas"
+      },
+      "Sound": "sorceresswhat4",
+      "Title": "Вебинар Hinting for ideas",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "RegisterGameJam"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+
+
+    {
+      "Id": {
+        "Value": "RegisterChatGPT"
+      },
+      "Title": "Регистрация в chat GPT",
+      "Sound": "gruntready1",
+      "Description": "Базовые промпты",
+      "Restrictions": [
+        {
+          "Value": "WebinarHintingIdeas"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "ActionTypeUnlock": "ChatGPT",
+          "CurrencyTypeUnlock": "Ideas"
+        }
+      ]
+    },
+
+    {
+      "Id": {
+        "Value": "ChatGPT1F"
+      },
+      "Title": "Учимся формулировать промпты 1",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "RegisterChatGPT"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 1.25
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "RegenerationRateBonus": 2
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ChatGPT2F"
+      },
+      "Title": "Учимся формулировать промпты 2",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "ChatGPT1F"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 2.5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "RegenerationRateBonus": 2
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ChatGPT3F"
+      },
+      "Title": "Учимся формулировать промпты 3",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "ChatGPT2F"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 3.5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "RegenerationRateBonus": 2
+        }
+      }]
+    },
+
+
+    {
+      "Id": {
+        "Value": "ChatGPT1I"
+      },
+      "Title": "Интерпретация ChatGPT 1",
+      "Description": "+50 макс энергии",
+      "Restrictions": [
+        {
+          "Value": "RegisterChatGPT"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 1.25
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "MaxBonus": 50
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ChatGPT2I"
+      },
+      "Title": "Учимся интерпретировать результат 2",
+      "Description": "+50 макс энергии",
+      "Restrictions": [
+        {
+          "Value": "ChatGPT1I"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 2.5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "MaxBonus": 50
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ChatGPT3I"
+      },
+      "Title": "Учимся интерпретировать результат 3",
+      "Description": "+50 макс энергии",
+      "Restrictions": [
+        {
+          "Value": "ChatGPT2I"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 3.5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "MaxBonus": 50
+        }
+      }]
+    },
+    
+
+    {
+      "Id": {
+        "Value": "AdvancedPrompting"
+      },
+      "Title": "Подписка на AI",
+      "Sound": "foresttrollready1",
+      "Description": "Какие бонусы она даст?",
+      "Restrictions": [
+        {
+          "Value": "ChatGPT3I"
+        },
+        {
+          "Value": "ChatGPT3F"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 250
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "UnlockType": "AdvancedPrompting"
+        }
+      ]
+    },
+
+
+
+    {
+      "Id": {
+        "Value": "WebinarCreatingArtAI"
+      },
+      "Title": "Вебинар Creating Art with AI",
+      "Description": "+2 энергии/сек",
+      "Sound": "foresttrollyes1",
+      "Restrictions": [
+        {
+          "Value": "WebinarHintingIdeas"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 80.0
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5.5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+
+    {
+      "Id": {
+        "Value": "RegisterNanoBanana"
+      },
+      "Title": "Регистрация в NanoBanana",
+      "Description": "Базовые промпты",
+      "Sound": "peasantbuildingcomplete1",
+      "Restrictions": [
+        {
+          "Value": "WebinarCreatingArtAI"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "ActionTypeUnlock": "NanoBanana",
+          "CurrencyTypeUnlock": "Art"
+        }
+      ]
+    },
+
+    {
+      "Id": {
+        "Value": "NanoBanana1"
+      },
+      "Title": "Генерация референсов 1",
+      "Description": "+1 лимит идей",
+      "Restrictions": [
+        {
+          "Value": "RegisterNanoBanana"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 1.25
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 1.25
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Ideas",
+          "MaxBonus": 1
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "NanoBanana2"
+      },
+      "Title": "Генерация референсов 2",
+      "Description": "+1 лимит идей",
+      "Restrictions": [
+        {
+          "Value": "NanoBanana1"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 2.5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 2.5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Ideas",
+          "MaxBonus": 1
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "NanoBanana3"
+      },
+      "Title": "Генерация референсов 3",
+      "Description": "+1 лимит идей",
+      "Restrictions": [
+        {
+          "Value": "NanoBanana2"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Ideas",
+          "MaxBonus": 1
+        }
+      }]
+    },
+
+
+    {
+      "Id": {
+        "Value": "ArtDirection1"
+      },
+      "Title": "Тренировка Lora",
+      "Description": "+1 арт лимит",
+      "Restrictions": [
+        {
+          "Value": "NanoBanana1"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Art",
+          "MaxBonus": 1
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ArtDirection2"
+      },
+      "Title": "Тренировка Lora",
+      "Description": "+1 арт лимит",
+      "Restrictions": [
+        {
+          "Value": "ArtDirection1"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 6
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 6
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Art",
+          "MaxBonus": 1
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "ArtDirection3"
+      },
+      "Title": "Тренировка Lora",
+      "Description": "+1 арт лимит",
+      "Restrictions": [
+        {
+          "Value": "ArtDirection2"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 7
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 7
+          }
+        ]
+      },
+      "Unlocks": [ {
+        "CurrencyBonus": {
+          "CurrencyType": "Art",
+          "MaxBonus": 1
+        }
+      }]
+    },
+
+
+    {
+      "Id": {
+        "Value": "BrainStorm"
+      },
+      "Title": "Создание мудборда",
+      "Description": "Не рановато ли?",
+      "Restrictions": [
+        {
+          "Value": "ArtDirection3"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Art",
+            "Count": 8.5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 8
+          }
+        ]
+      },
+      "Unlocks": [   {
+        "ActionTypeUnlock": "BrainStorm"
+      }]
+    },
+    
+    
+    {
+      "Id": {
+        "Value": "WebinarHowToCodeAI"
+      },
+      "Title": "Вебинар How to code using AI",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "WebinarCreatingArtAI"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 200
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 9.5
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 9.5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+
+
+    {
+      "Id": {
+        "Value": "RegisterClaude"
+      },
+      "Title": "Регистрация в Claude",
+      "Description": "Базовые промпты",
+      "Restrictions": [
+        {
+          "Value": "WebinarHowToCodeAI"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 100.0
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "ActionTypeUnlock": "Claude",
+          "CurrencyTypeUnlock": "Code"
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "CreateGit"
+      },
+      "Title": "Создание репозитория",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "RegisterClaude"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 2.5
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "RegenerationRateBonus": 2
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "CreateTemplate"
+      },
+      "Title": "Создание шаблона проекта",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "CreateGit"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "RegenerationRateBonus": 2
+        }
+      }]
+    },
+
+    {
+      "Id": {
+        "Value": "Agent"
+      },
+      "Title": "Agent Mode",
+      "Description": "+1 code/сек",
+      "Restrictions": [
+        {
+          "Value": "CreateTemplate"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Code",
+          "RegenerationRateBonus": 1
+        }
+      }]
+    },
+    
+    
+    
+    {
+      "Id": {
+        "Value": "Artist"
+      },
+      "Title": "Найти художника",
+      "Description": "+0.1 арт/сек",
+      "Restrictions": [
+        {
+          "Value": "WebinarHowToCodeAI"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 5.5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 8
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Art",
+          "RegenerationRateBonus": 0.1
+        }
+      }]
+    },
+    {
+      "Id": {
+        "Value": "GD"
+      },
+      "Title": "Найти геймдизайнера",
+      "Description": "+0.1 идей/сек",
+      "Restrictions": [
+        {
+          "Value": "WebinarHowToCodeAI"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 5.5
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 8
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Ideas",
+          "RegenerationRateBonus": 0.1
+        }
+      }]
+    },
+    
+    
+    {
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 150.0
+          },
+          {
+            "CurrencyType": "Code",
+            "Count": 10.5
+          }
+        ]
+      },
+      "Id": {
+        "Value": "WebinarKickOff"
+      },
+      "Title": "Вебинар Kick off",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "WebinarHowToCodeAI"
+        }
+      ],
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+
+
+    {
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 400.0
+          }
+        ]
+      },
+      "Id": {
+        "Value": "LocalAI"
+      },
+      "Title": "Прокрастинация",
+      "Description": "Что, уже?",
+      "Restrictions": [
+        {
+          "Value": "WebinarKickOff"
+        }
+      ],
+      "Unlocks": [
+        {
+          "ActionTypeUnlock": "Optimization"
+        }
+      ]
+    },
+    
+    
+    {
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 11.8
+          }
+        ]
+      },
+      "Id": {
+        "Value": "CreateIdea"
+      },
+      "Title": "Придумать идею игры",
+      "Description": "+2 энергии/сек",
+      "Restrictions": [
+        {
+          "Value": "WebinarKickOff"
+        }
+      ],
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRateBonus": 2
+          }
+        }
+      ]
+    },
+    
+    
+
+
+    {
+      "Id": {
+        "Value": "Alpha"
+      },
+      "Title": "Альфа билд",
+      "Description": "Это запускается?",
+      "Restrictions": [
+        {
+          "Value": "WebinarKickOff"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 10.8
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 10.8
+          },
+          {
+            "CurrencyType": "Code",
+            "Count": 10.8
+          }
+        ]
+      },
+      "Unlocks": []
+    },
+
+
+
+
+    {
+      "Id": {
+        "Value": "Coffee1"
+      },
+      "Title": "Выпить энергетик",
+      "Description": "+50 к макс энергии",
+      "Restrictions": [
+        {
+          "Value": "Alpha"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "MaxBonus": 50
+          }
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "Coffee2"
+      },
+      "Title": "Сон на 15 минут",
+      "Description": "+2 к восстановлению энергии",
+      "Restrictions": [
+        {
+          "Value": "Coffee1"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRate": 2
+          }
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "Coffee3"
+      },
+      "Title": "Дрип-пакет кофе",
+      "Description": "+50 к макс энергии",
+      "Restrictions": [
+        {
+          "Value": "Coffee2"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 5
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 5
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRate": 2
+          }
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "Coffee4"
+      },
+      "Title": "Фильтр-кофе",
+      "Description": "+50 к макс энергии",
+      "Restrictions": [
+        {
+          "Value": "Coffee3"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 8
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "MaxBonus": 50
+          }
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "Coffee5"
+      },
+      "Title": "Купить кофе-машину",
+      "Description": "Можно готовить капучино дома",
+      "Restrictions": [
+        {
+          "Value": "Coffee4"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 13.9
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "ActionTypeUnlock": "Coffee"
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Value": "Coffee6"
+      },
+      "Title": "Изучить латте-арт",
+      "Description": "+лимит код",
+      "Restrictions": [
+        {
+          "Value": "Coffee5"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 16.9
+          }
+        ]
+      },
+      "Unlocks": [
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Code",
+            "MaxBonus": 5
+          }
+        }
+        
+      ]
+    },
+
+    {
+      "Id": {
+        "Value": "Beta"
+      },
+      "Title": "Бета билд",
+      "Description": "Тут есть фан?",
+      "Restrictions": [
+        {
+          "Value": "Alpha"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 600.0
+          },
+          {
+            "CurrencyType": "Ideas",
+            "Count": 12.5
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 12.5
+          },
+          {
+            "CurrencyType": "Code",
+            "Count": 20.5
+          }
+        ]
+      },
+      "Unlocks": []
+    },
+
+    
+    
+    {
+      "Id": {
+        "Value": "Release"
+      },
+      "Title": "Релиз!",
+      "Description": "Продакшн-реди",
+      "Restrictions": [
+        {
+          "Value": "Beta"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 300
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 16.9
+          },
+          {
+            "CurrencyType": "Code",
+            "Count": 21.9
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Energy",
+          "MaxBonus": 9999999
+        }
+      },
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Energy",
+            "RegenerationRate": 50
+          }
+        }
+      ]
+    },
+
+    {
+      "Id": {
+        "Value": "SendBuild"
+      },
+      "Title": "Отправить билд",
+      "Description": "Успеваем?",
+      "Restrictions": [
+        {
+          "Value": "Beta"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Ideas",
+            "Count": 15.5
+          },
+          {
+            "CurrencyType": "Art",
+            "Count": 15.5
+          }
+        ]
+      },
+      "Unlocks": [{
+        "CurrencyBonus": {
+          "CurrencyType": "Ideas",
+          "MaxBonus": 10
+        }
+      },
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Art",
+            "MaxBonus": 10
+          }
+        },
+        {
+          "CurrencyBonus": {
+            "CurrencyType": "Code",
+            "MaxBonus": 10
+          }
+        }
+        
+      ]
+    },
+
+
+   
+    {
+      "Id": {
+        "Value": "Win"
+      },
+      "Title": "Объявление победителя",
+      "Description": "Когда результаты?",
+      "Restrictions": [
+        {
+          "Value": "SendBuild"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 9999999
+          }
+        ]
+      },
+      "Unlocks": []
+    },
+
+    {
+      "Id": {
+        "Value": "Win2"
+      },
+      "Title": "ТЫ КРУТ",
+      "Description": "АБСОЛЮТНО",
+      "Restrictions": [
+        {
+          "Value": "Win"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 9999999
+          }
+        ]
+      },
+      "Unlocks": []
+    },
+
+
+    {
+      "Id": {
+        "Value": "Win3"
+      },
+      "Title": "Дальше концовки нет",
+      "Description": "Точно-точно",
+      "Restrictions": [
+        {
+          "Value": "Win2"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Energy",
+            "Count": 9999999
+          }
+        ]
+      },
+      "Unlocks": []
+    },
+
+
+    {
+      "Id": {
+        "Value": "Win4"
+      },
+      "Title": "Я же говорил",
+      "Description": "Ну извини",
+      "Restrictions": [
+        {
+          "Value": "Win3"
+        }
+      ],
+      "Price": {
+        "Resources": [
+          {
+            "CurrencyType": "Code",
+            "Count": 9999999
+          }
+        ]
+      },
+      "Unlocks": []
+    }
+    
+    
+    
+    
+    
+  ]
+}

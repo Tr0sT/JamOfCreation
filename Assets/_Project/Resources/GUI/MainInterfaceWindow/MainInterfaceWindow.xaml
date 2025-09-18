@@ -1,0 +1,63 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis"
+             xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NuclearBand.Game">
+  <noesis:Xaml.Dependencies>
+    <noesis:Dependency Source="Energy.png"/>
+    <noesis:Dependency Source="Ideas.png"/>
+    <noesis:Dependency Source="Code.png"/>
+    <noesis:Dependency Source="Art.png"/>
+  </noesis:Xaml.Dependencies>
+  <UserControl.Resources>
+    <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    <local:EmojiRichTextConverter x:Key="EmojiRichTextConverter"/>
+  </UserControl.Resources>
+  <Viewbox Stretch="Uniform">
+    <Grid Margin="20" Width="1080" Height="2340">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="250"/>
+        <RowDefinition Height="300"/>
+        <RowDefinition Height="250"/>
+      </Grid.RowDefinitions>
+
+     
+      <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ItemsControl ItemsSource="{Binding CurrencyViewModels}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemContainerStyle>
+            <Style TargetType="ContentPresenter">
+              <Setter Property="Margin" Value="0,0,0,8"/>
+              <Setter Property="HorizontalAlignment" Value="Stretch"/>
+              <Setter Property="VerticalAlignment" Value="Top"/>
+              <!-- Скрываем элемент по умолчанию и показываем только если ViewModel.Visible == true -->
+              <Setter Property="Visibility" Value="Collapsed"/>
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding Visible.Value}" Value="True">
+                  <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </ItemsControl.ItemContainerStyle>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <local:EnergyPanel DataContext="{Binding}" VerticalAlignment="Top" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+      <local:UpgradesPanel Grid.Row="1" DataContext="{Binding UpgradesPanelViewModel}" />
+      <local:ActionsPanel Grid.Row="2" DataContext="{Binding ActionsPanelViewModel}" Visibility="{Binding Visible.Value, Converter={StaticResource BoolToVis}}"/>
+      <local:PromptOptions Grid.Row="3" DataContext="{Binding PromptOptionsViewModel}" Visibility="{Binding Visible.Value, Converter={StaticResource BoolToVis}}"/>
+      <local:ActionsPanel Grid.Row="4" DataContext="{Binding PromptsPanelViewModel}" Visibility="{Binding Visible.Value, Converter={StaticResource BoolToVis}}"/>
+    </Grid>
+  </Viewbox>
+</UserControl>

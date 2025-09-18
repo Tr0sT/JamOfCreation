@@ -1,0 +1,76 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis" 
+             xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:NuclearBand.Game;assembly=Assembly-CSharp"
+             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1920">
+
+  <noesis:Xaml.Dependencies>
+    <noesis:Dependency Source="Energy.png"/>
+    <noesis:Dependency Source="Ideas.png"/>
+    <noesis:Dependency Source="Code.png"/>
+    <noesis:Dependency Source="Art.png"/>
+  </noesis:Xaml.Dependencies>
+  <UserControl.Resources>
+    <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    <local:EmojiRichTextConverter x:Key="EmojiRichTextConverter"/>
+  </UserControl.Resources>
+  <Viewbox>
+    <Grid Width="1080" Margin="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Border Grid.Row="1"
+              CornerRadius="6"
+              Background="#11203366"
+              BorderBrush="#553AA0FF"
+              BorderThickness="1"
+              Padding="8">
+
+        <Grid Height="130">
+          <ProgressBar Minimum="0"
+                       Maximum="1"
+                       Value="{Binding Progress.Value, Mode=OneWay}"
+                       Background="#22003366"
+                       Foreground="#FF3AA0FF"
+                       Margin="0,10,0,10"/>
+
+          <Grid IsHitTestVisible="False">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Исправлено: правильный префикс и attached‑свойство -->
+            <TextBlock Grid.Column="0"
+                       Foreground="#FFFFFFFF"
+                       FontSize="60"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       noesis:RichText.Text="{Binding Name, Converter={StaticResource EmojiRichTextConverter}}"/>
+
+            <TextBlock Grid.Column="1"
+                       Text="{Binding CurrentAndMaxValue.Value, Mode=OneWay}"
+                       Foreground="#FFFFFFFF"
+                       FontSize="60"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="2"
+                       Text="{Binding RegenerationValue.Value, Mode=OneWay}"
+                       Foreground="#FF9FE8FF"
+                       FontSize="60"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,6,0"/>
+          </Grid>
+        </Grid>
+      </Border>
+    </Grid>
+  </Viewbox>
+</UserControl>
