@@ -1,0 +1,49 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:na="clr-namespace:NoesisApp;assembly=Noesis">
+  <UserControl.Resources>
+    <Style x:Key="BarContainer" TargetType="Border">
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="Padding" Value="6"/>
+      <Setter Property="Background" Value="#202226"/>
+    </Style>
+    <Style x:Key="StatLabel" TargetType="TextBlock">
+      <Setter Property="FontSize" Value="20"/>
+      <Setter Property="Foreground" Value="#E6E6E6"/>
+      <Setter Property="Margin" Value="0,0,0,6"/>
+    </Style>
+    <DataTemplate x:Key="ResourceBarTemplate">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Name}" Style="{StaticResource StatLabel}"/>
+        <Border Grid.Row="1" Style="{StaticResource BarContainer}">
+          <Grid>
+            <Rectangle Fill="#2C2F33" RadiusX="6" RadiusY="6"/>
+            <Rectangle Fill="{Binding ForegroundBrush, FallbackValue=#6FA8DC}"
+                       HorizontalAlignment="Stretch"
+                       RenderTransformOrigin="0,0.5">
+              <Rectangle.RenderTransform>
+                <ScaleTransform ScaleX="{Binding Progress}" />
+              </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#F3F3F3"
+                       Text="{Binding Value}"/>
+          </Grid>
+        </Border>
+      </Grid>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <StackPanel Orientation="Vertical">
+    <ContentControl Content="{Binding ResourcesPanelViewModel.Energy}"
+                    ContentTemplate="{StaticResource ResourceBarTemplate}"/>
+    <ContentControl Content="{Binding ResourcesPanelViewModel.Oxygen}"
+                    ContentTemplate="{StaticResource ResourceBarTemplate}" Margin="0,12,0,0"/>
+    <ContentControl Content="{Binding ResourcesPanelViewModel.Morale}"
+                    ContentTemplate="{StaticResource ResourceBarTemplate}" Margin="0,12,0,0"/>
+  </StackPanel>
+</UserControl>

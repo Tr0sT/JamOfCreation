@@ -1,0 +1,16 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <UserControl.Resources>
+    <DataTemplate x:Key="LogEntryTemplate">
+      <TextBlock Text="{Binding Message}" TextWrapping="Wrap" Foreground="#EDEDED" Margin="0,4,0,4"/>
+    </DataTemplate>
+  </UserControl.Resources>
+  <Border Background="#151617" CornerRadius="10" Padding="12" Margin="0,12,0,0">
+    <StackPanel>
+      <TextBlock Text="ЛОГ:" FontSize="20" Foreground="#FFF" Margin="0,0,0,8"/>
+      <ScrollViewer VerticalScrollBarVisibility="Auto" Height="240">
+        <ItemsControl ItemsSource="{Binding LogPanelViewModel.Entries}" ItemTemplate="{StaticResource LogEntryTemplate}"/>
+      </ScrollViewer>
+    </StackPanel>
+  </Border>
+</UserControl>

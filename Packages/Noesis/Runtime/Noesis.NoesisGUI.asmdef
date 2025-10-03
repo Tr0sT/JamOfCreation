@@ -1,0 +1,55 @@
+{
+    "name": "Noesis.NoesisGUI",
+    "rootNamespace": "",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.HighDefinition.Runtime",
+        "Unity.RenderPipelines.Core.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.ugui",
+            "expression": "1.0.0",
+            "define": "ENABLE_UGUI_PACKAGE"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "7.2.1",
+            "define": "ENABLE_URP_PACKAGE"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "14.0.5",
+            "define": "ENABLE_URP_PACKAGE_VR"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "17.0.0",
+            "define": "ENABLE_URP_PACKAGE_RENDER_GRAPH"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "12.1.1",
+            "define": "ENABLE_HDRP_PACKAGE"
+        },
+        {
+            "name": "com.unity.modules.xr",
+            "expression": "1.0.0",
+            "define": "ENABLE_XR_MODULE"
+        },
+        {
+            "name": "com.unity.modules.vr",
+            "expression": "1.0.0",
+            "define": "ENABLE_VR_MODULE"
+        }
+    ],
+    "noEngineReferences": false
+}

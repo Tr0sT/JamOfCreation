@@ -1,0 +1,106 @@
+{
+  "name": "com.noesis.noesisgui",
+  "version": "3.2.8",
+  "displayName": "NoesisGUI",
+  "description": "NoesisGUI is a multiplatform user interface middleware with support for true vectors. It is heavily optimized for video games and is deeply integrated in Unity. NoesisGUI has a rich ecosystem, with a first class UI editor and tools.",
+  "_upm": {
+    "supportedPlatforms": ["Desktop", "Mobile", "Web", "Consoles"]
+  },
+  "unity": "2020.2",
+  "documentationUrl": "https://www.noesisengine.com/docs",
+  "changelogUrl": "https://www.noesisengine.com/docs/Gui.Core.Changelog.html",
+  "licensesUrl": "https://www.noesisengine.com/legal/eula.php",
+  "keywords": [],
+  "author": {
+    "name": "Noesis Technologies",
+    "email": "support@noesisengine.com",
+    "url": "https://www.noesisengine.com"
+  },
+  "samples": [
+    {
+      "displayName": "Hello World",
+      "description": "A minimalist Hello World sample created with NoesisGUI.",
+      "path": "Samples~/HelloWorld"
+    },
+    {
+      "displayName": "Buttons",
+      "description": "A menu with buttons showcasing how to set Visual States to customize the appearance, and how to use command bindings to hook events using MVVM style.",
+      "path": "Samples~/Buttons"
+    },
+    {
+      "displayName": "Custom Render",
+      "description": "An example of using OnRender and DrawingContext as a memory efficient way to render rectangles, lines, text, or any arbitrary geometric shapes.",
+      "path": "Samples~/CustomRender"
+    },
+    {
+      "displayName": "Login",
+      "description": "A showcase of how to use a TextBox and a PasswordBox to implement a login panel. Information entered by the user is gathered using MVVM and commands.",
+      "path": "Samples~/Login"
+    },
+    {
+      "displayName": "Quest Log",
+      "description": "A quest log which uses data binding to interact with data. The interface is populated by taking information from an ObservableCollection in a model class.",
+      "path": "Samples~/QuestLog"
+    },
+    {
+      "displayName": "Localization",
+      "description": "A localized menu using the Loc markup extension, rich text, and data binding. Displays in English, French, Japanese and Arabic.",
+      "path": "Samples~/Localization"
+    },
+    {
+      "displayName": "Scoreboard",
+      "description": "An example of how to use DataTrigger and data binding to modify the appaerance of UI elements using model property values.",
+      "path": "Samples~/Scoreboard"
+    },
+    {
+      "displayName": "Data Binding",
+      "description": "A solar system showcasing the power of Styles and Templates in NoesisGUI.",
+      "path": "Samples~/DataBinding"
+    },
+    {
+      "displayName": "Inventory",
+      "description": "A typical inventory panel showcasing how to use Drag & Drop, and interactivity Behaviors, in games.",
+      "path": "Samples~/Inventory"
+    },
+    {
+      "displayName": "Tic-Tac-Toe",
+      "description": "The classic paper-and-pencil game for two players, implemented in NoesisGUI.",
+      "path": "Samples~/TicTacToe"
+    },
+    {
+      "displayName": "Brush Shaders",
+      "description": "Buttons with procedural pattern brushes driven by a pixel shader.",
+      "path": "Samples~/BrushShaders"
+    },
+    {
+      "displayName": "Video Effects",
+      "description": "A demonstration of using MediaElement to play videos, in combination with custom effects and blending modes.",
+      "path": "Samples~/VideoEffect"
+    },
+    {
+      "displayName": "Rive",
+      "description": "A showcase of using Rive vector graphics and animations in NoesisGUI, controlling them using bindings and interaction triggers.",
+      "path": "Samples~/Rive"
+    },
+    {
+      "displayName": "Background Blur",
+      "description": "Demonstrates how to use the BackgroundEffect behavior to create impressive dynamic background effects.",
+      "path": "Samples~/BackgroundBlur"
+    },
+    {
+      "displayName": "World Space UI (Built-In Pipeline)",
+      "description": "A first person scene showcasing the use of WorldSpace UI to create diegetic interfaces, with VR support.",
+      "path": "Samples~/WorldSpaceUILegacy"
+    },
+    {
+      "displayName": "Widget3D (Built-In Pipeline)",
+      "description": "A scene demonstrating UI rendered to a 3D object using RenderTexture, with interactive controls for lights.",
+      "path": "Samples~/Widget3DLegacy"
+    }
+  ],
+  "dependencies": {
+    "com.unity.inputsystem": "1.1.1",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.video": "1.0.0"
+  }
+}
