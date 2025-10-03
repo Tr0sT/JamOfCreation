@@ -5,7 +5,7 @@
     "com.gamelovers.mcp-unity": "https://github.com/CoderGamester/mcp-unity.git",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.kyrylokuzyk.primetween": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
-    "com.noesis.noesisgui": "file:C:/Projects/Noesis",
+    "com.noesis.noesisgui": "file:Noesis",
     "com.nuclearband.projectfoldericons": "https://github.com/NuclearBand/NuclearProjectFolderIcons.git",
     "com.nuclearband.windowsmanager": "https://github.com/NuclearBand/NuclearWindowsManager.git",
     "com.tayx.graphy": "https://github.com/Tayx94/graphy.git",
